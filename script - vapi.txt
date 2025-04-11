@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente en Google Sites</title>
+    <script>
+        // Función para llamar a la API del asistente
+        async function interactuarConAsistente() {
+            // Obtener la entrada del usuario
+            const usuarioInput = document.getElementById('usuario_input').value;
+
+            // URL de la API de tu asistente (aquí cambia por tu URL)
+            const api_url = 'https://api.ejemplo.com/consultar_asistente';
+            
+            // Datos a enviar a la API
+            const data = {
+                pregunta: usuarioInput,
+                asistente_id: 'tu_id_de_asistente'<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente en Google Sites</title>
+    <script>
+        // Función para llamar a la API del asistente
+        async function interactuarConAsistente() {
+            // Obtener la entrada del usuario
+            const usuarioInput = document.getElementById('usuario_input').value;
+
+            // URL de la API de tu asistente (aquí cambia por tu URL)
+            const api_url = 'https://api.ejemplo.com/consultar_asistente';
+            
+            // Datos a enviar a la API
+            const data = {
+                pregunta: usuarioInput,
+                asistente_id: '2451e9a6-657d-4306-804d-8a98fe3f0e93'
+            };
+            
+            try {
+                // Realizar la solicitud a la API
+                const response = await fetch(api_url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer tu_token_de_autenticacion'  // Si es necesario
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                // Comprobar si la respuesta es exitosa
+                if (response.ok) {
+                    const resultado = await response.json();
+                    document.getElementById('respuesta_asistente').innerText = resultado.respuesta;
+                } else {
+                    document.getElementById('respuesta_asistente').innerText = 'Hubo un error al obtener la respuesta.';
+                }
+            } catch (error) {
+                document.getElementById('respuesta_asistente').innerText = 'Error en la conexión con la API.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Asistente de VAPI</h2>
+    
+    <!-- Formulario de entrada -->
+    <input type="text" id="usuario_input" placeholder="Escribe tu pregunta...">
+    <button onclick="interactuarConAsistente()">Enviar</button>
+    
+    <!-- Mostrar la respuesta del asistente -->
+    <p id="respuesta_asistente"></p>
+</body>
+</html>
+
+            };
+            
+            try {
+                // Realizar la solicitud a la API
+                const response = await fetch(api_url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer tu_token_de_autenticacion'  // Si es necesario
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                // Comprobar si la respuesta es exitosa
+                if (response.ok) {
+                    const resultado = await response.json();
+                    document.getElementById('respuesta_asistente').innerText = resultado.respuesta;
+                } else {
+                    document.getElementById('respuesta_asistente').innerText = 'Hubo un error al obtener la respuesta.';
+                }
+            } catch (error) {
+                document.getElementById('respuesta_asistente').innerText = 'Error en la conexión con la API.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Asistente de VAPI</h2>
+    
+    <!-- Formulario de entrada -->
+    <input type="text" id="usuario_input" placeholder="Escribe tu pregunta...">
+    <button onclick="interactuarConAsistente()">Enviar</button>
+    
+    <!-- Mostrar la respuesta del asistente -->
+    <p id="respuesta_asistente"></p>
+</body>
+</html>
